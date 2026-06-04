@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Point SEO | Local SEO for Home Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Custom "Brown/Brand" Palette
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#a67c52', // Primary Bronze/Brown
+                            600: '#8c6239', // Darker Brown
+                            700: '#754e29', // Deep Brown for text/buttons
+                            800: '#5e3d20',
+                            900: '#442a14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Subtle background mesh for the Hero */
+        .mesh-bg {
+            background-color: #fafaf9;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(27, 35%, 92%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(30, 30%, 90%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(27, 20%, 95%, 1) 0px, transparent 50%);
+        }
+
+        /* Accordion Transitions */
+        .faq-content {
+            transition: grid-template-rows 0.3s ease-out;
+            display: grid;
+            grid-template-rows: 0fr;
+        }
+        .faq-content.active {
+            grid-template-rows: 1fr;
+        }
+        .faq-inner {
+            overflow: hidden;
+        }
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+        .rotate-icon.active {
+            transform: rotate(180deg);
+        }
+
+        /* 3D Tilt Effect for Hero Dashboard */
+        .hero-tilt {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        .hero-tilt:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-stone-50 antialiased pb-20">
+
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-stone-200 bg-stone-50/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-12 h-12 flex flex-col items-center justify-center">
+                    <div class="absolute top-0 z-20 w-6 h-6 bg-red-600 rounded-tl-full rounded-tr-full rounded-bl-full shadow-md transform rotate-45 group-hover:-translate-y-1.5 transition-transform duration-300 flex items-center justify-center">
+                        <div class="w-2 h-2 bg-white rounded-full shadow-inner"></div>
+                    </div>
+                    
+                    <div class="absolute bottom-1 z-10 w-9 h-7 bg-stone-200 border-[1.5px] border-white rounded shadow-sm overflow-hidden" style="transform: perspective(100px) rotateX(45deg);">
+                        <div class="absolute top-2 left-0 w-full h-1.5 bg-white"></div>
+                        <div class="absolute top-0 left-3 w-1.5 h-full bg-white"></div>
+                        <div class="absolute bottom-0 right-0 w-4 h-3 bg-green-300"></div>
+                        <div class="absolute top-0 right-0 w-3 h-2 bg-blue-300"></div>
+                    </div>
+
+                    <div class="absolute bottom-2 z-15 w-2.5 h-1 bg-black/20 rounded-full blur-[1px] group-hover:scale-75 group-hover:opacity-50 transition-all duration-300"></div>
+                </div>
+                <span class="self-center text-xl font-bold whitespace-nowrap text-slate-900 tracking-tight">Grid Point SEO</span>
+            </a>
+            
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                    <li><a href="#features" class="block py-2 px-3 text-slate-600 hover:text-brand-700 transition-colors">Features</a></li>
+                    <li><a href="#results" class="block py-2 px-3 text-slate-600 hover:text-brand-700 transition-colors">Results</a></li>
+                    <li><a href="#faq" class="block py-2 px-3 text-slate-600 hover:text-brand-700 transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="flex md:order-2">
+                <button type="button" class="text-white bg-brand-700 hover:bg-brand-800 font-medium rounded-full text-sm px-6 py-2.5 text-center shadow-lg shadow-brand-900/10 transition-all transform hover:scale-105">
+                    Book a Call
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden mesh-bg">
+        <div class="px-6 mx-auto max-w-7xl">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <div class="flex flex-col items-start relative z-10">
+                    <div class="inline-flex items-center gap-x-2 bg-white border border-stone-200 rounded-full px-4 py-1.5 mb-8 shadow-sm">
+                        <div class="flex -space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-stone-200 border-2 border-white"></div>
+                            <div class="w-6 h-6 rounded-full bg-brand-200 border-2 border-white"></div>
+                            <div class="w-6 h-6 rounded-full bg-stone-300 border-2 border-white"></div>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 uppercase tracking-wide pl-1">Trusted by Local Pros</span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+                        Get More Leads & <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 to-brand-500">Grow Your Business</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
+                        Rank #1 On Google. We specialize in local SEO strategies that turn search traffic into high-value jobs for home service businesses.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-700 rounded-full hover:bg-brand-800 shadow-xl shadow-brand-900/10 transition-all hover:-translate-y-1">
+                            Book Your Strategy Call
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative w-full max-w-lg mx-auto lg:max-w-none hero-tilt">
+                    <div class="absolute -top-12 -right-12 w-72 h-72 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+                    
+                    <div class="relative bg-white rounded-2xl shadow-2xl border border-stone-100 overflow-hidden">
+                        <div class="h-10 bg-stone-50 border-b border-stone-100 flex items-center px-4 gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-400/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
+                            <div class="ml-auto w-32 h-2 bg-stone-200 rounded-full"></div>
+                        </div>
+                        
+                        <div class="p-6 grid grid-cols-12 gap-6">
+                            <div class="col-span-3 space-y-3 hidden sm:block">
+                                <div class="h-8 w-full bg-brand-50 rounded-lg border border-brand-100"></div>
+                                <div class="h-8 w-full bg-white rounded-lg"></div>
+                                <div class="h-8 w-full bg-white rounded-lg"></div>
+                                <div class="mt-8 h-32 w-full bg-stone-50 rounded-lg"></div>
+                            </div>
+                            
+                            <div class="col-span-12 sm:col-span-9 space-y-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-4 rounded-xl bg-brand-50 border border-brand-100">
+                                        <div class="text-xs text-brand-600 font-semibold mb-1">REVENUE</div>
+                                        <div class="text-2xl font-bold text-slate-800">$42,500</div>
+                                        <div class="text-xs text-green-600 mt-1 font-medium">▲ 18% this month</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-white border border-stone-100 shadow-sm">
+                                        <div class="text-xs text-slate-400 font-semibold mb-1">LEADS</div>
+                                        <div class="text-2xl font-bold text-slate-800">24</div>
+                                        <div class="text-xs text-green-600 mt-1 font-medium">▲ 24% this month</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white border border-stone-100 rounded-xl p-4 shadow-sm h-40 flex items-end justify-between px-2 pb-2 gap-2">
+                                    <div class="w-full bg-stone-100 rounded-t-sm h-[30%]"></div>
+                                    <div class="w-full bg-stone-100 rounded-t-sm h-[45%]"></div>
+                                    <div class="w-full bg-stone-100 rounded-t-sm h-[40%]"></div>
+                                    <div class="w-full bg-brand-200 rounded-t-sm h-[60%]"></div>
+                                    <div class="w-full bg-brand-300 rounded-t-sm h-[75%]"></div>
+                                    <div class="w-full bg-brand-400 rounded-t-sm h-[55%]"></div>
+                                    <div class="w-full bg-brand-600 rounded-t-sm h-[90%] relative group cursor-pointer">
+                                        <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">High!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 border-y border-stone-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-sm font-semibold text-slate-400 mb-8 tracking-widest uppercase">Trusted by Local Leaders</p>
+            <div class="flex flex-wrap justify-center gap-10 md:gap-16 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                
+                <div class="flex items-center gap-2 font-black text-xl text-slate-800">
+                    <div class="w-6 h-6 border-4 border-slate-800 rounded-full border-t-brand-600"></div>
+                    AIRPRO
+                </div>
+
+                <div class="flex items-center gap-1 font-serif font-bold text-2xl text-slate-800 italic">
+                    Pipe<span class="text-brand-600">Masters</span>
+                </div>
+
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-800 tracking-tighter uppercase">
+                    <div class="w-0 h-0 border-l-[10px] border-l-transparent border-b-[15px] border-b-slate-800 border-r-[10px] border-r-transparent"></div>
+                    Summit Roofs
+                </div>
+
+                <div class="flex items-center font-semibold text-lg text-slate-800 border-2 border-slate-800 px-3 py-1">
+                    J&K LEGAL
+                </div>
+
+                <div class="flex items-center gap-1 font-bold text-xl text-slate-800">
+                    <div class="w-3 h-3 bg-brand-600 transform rotate-45"></div>
+                    <div class="w-3 h-3 bg-slate-800 transform rotate-45 -ml-2"></div>
+                    NEXUS
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-stone-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 space-y-32">
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block p-3 bg-brand-100 rounded-xl text-brand-700 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Leads That Convert</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Dominate your local market with a proven lead generation system. We optimize your Google Business Profile to capture the highest-quality leads in the home service industry.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-700">
+                            <span class="flex items-center justify-center w-5 h-5 mt-0.5 bg-green-100 text-green-600 rounded-full text-xs shrink-0">✓</span>
+                            <span><strong class="text-slate-900">High Buyer Intent:</strong> Reach customers who are actively searching for your services right now.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700">
+                            <span class="flex items-center justify-center w-5 h-5 mt-0.5 bg-green-100 text-green-600 rounded-full text-xs shrink-0">✓</span>
+                            <span><strong class="text-slate-900">Built-In Social Proof:</strong> Convert visitors instantly by front-loading your 5-star reviews.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700">
+                            <span class="flex items-center justify-center w-5 h-5 mt-0.5 bg-green-100 text-green-600 rounded-full text-xs shrink-0">✓</span>
+                            <span><strong class="text-slate-900">Hyper-Local Targeting:</strong> Show up first in the Google Map Pack for your specific service areas.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-brand-200 rounded-3xl transform rotate-6 scale-95"></div>
+                    <div class="relative bg-white rounded-2xl shadow-xl border border-stone-100 p-6">
+                        <div class="flex items-center justify-between mb-6 border-b border-stone-100 pb-4">
+                            <div class="font-bold text-slate-800">Recent Inquiries</div>
+                            <div class="px-2 py-1 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded tracking-wide">Live Feed</div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-xl border border-stone-100">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">DH</div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-slate-800">David Harrison</div>
+                                    <div class="text-xs text-slate-500">Requesting Quote • 2m ago</div>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">✓</div>
+                            </div>
+                             <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-xl border border-stone-100">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">SL</div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-slate-800">Sarah Lee</div>
+                                    <div class="text-xs text-slate-500">Booked Online • 12m ago</div>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">✓</div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-xl border border-stone-100 opacity-60">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm">MK</div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-slate-800">Mike King</div>
+                                    <div class="text-xs text-slate-500">Form Submission • 45m ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 md:order-1">
+                    <div class="absolute inset-0 bg-stone-200 rounded-3xl transform -rotate-3"></div>
+                    <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-stone-100">
+                        <div class="text-center mb-8">
+                            <div class="inline-block p-4 rounded-full bg-green-50 border-4 border-green-100 mb-4">
+                                <div class="text-4xl">🏆</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Business Profile Health</h3>
+                            <p class="text-sm text-slate-500">Optimization Score</p>
+                        </div>
+                        
+                        <div class="mb-2 flex justify-between items-end">
+                            <span class="font-bold text-brand-700">Status</span>
+                            <span class="font-bold text-slate-900">100%</span>
+                        </div>
+                        <div class="w-full bg-stone-100 rounded-full h-3 mb-6 overflow-hidden">
+                            <div class="bg-brand-600 h-3 rounded-full" style="width: 100%"></div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm border-b border-stone-50 pb-2">
+                                <span class="text-slate-600">Keywords</span>
+                                <span class="text-green-600 font-medium flex items-center gap-1">✓ Optimized</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-stone-50 pb-2">
+                                <span class="text-slate-600">Service Area</span>
+                                <span class="text-green-600 font-medium flex items-center gap-1">✓ Optimized</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-slate-600">Photos</span>
+                                <span class="text-green-600 font-medium flex items-center gap-1">✓ +45 Added</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2">
+                    <div class="inline-block p-3 bg-brand-100 rounded-xl text-brand-700 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Let homeowners find you</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Put your business at the top of Google search results. We optimize every aspect of your online presence to capture high-intent leads.
+                    </p>
+                    <p class="text-slate-600 border-l-4 border-brand-300 pl-4 italic">
+                        "Dominating the Map Pack is the single most effective way to drive calls for local service businesses."
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block p-3 bg-brand-100 rounded-xl text-brand-700 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Visual Rank Tracking</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Stop guessing. We provide visual heatmap reporting that shows you exactly how you rank across your entire city, neighborhood by neighborhood.
+                    </p>
+                    <div class="flex flex-col gap-2 mt-6">
+                         <div class="flex items-center gap-3">
+                             <div class="w-4 h-4 bg-green-500 rounded shadow-sm"></div>
+                             <span class="text-sm font-medium text-slate-700">Rank 1-3 (Money Zone)</span>
+                         </div>
+                         <div class="flex items-center gap-3">
+                             <div class="w-4 h-4 bg-yellow-400 rounded shadow-sm"></div>
+                             <span class="text-sm font-medium text-slate-700">Rank 4-10 (Opportunity)</span>
+                         </div>
+                         <div class="flex items-center gap-3">
+                             <div class="w-4 h-4 bg-red-400 rounded shadow-sm"></div>
+                             <span class="text-sm font-medium text-slate-700">Rank 10+ (Invisible)</span>
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="relative bg-slate-900 p-6 rounded-3xl shadow-2xl border-4 border-white">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="text-white font-semibold text-sm opacity-90">Keyword: "Plumber Near Me"</div>
+                        <div class="px-2 py-0.5 rounded bg-white/10 text-white text-xs">Grid: 5x5</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-5 gap-3 aspect-square">
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">4</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">2</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">1</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">2</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">5</div>
+                        
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">3</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">1</div>
+                        <div class="bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white scale-110 z-10 relative">1</div> 
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">1</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">3</div>
+
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">2</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">1</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">1</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">2</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">4</div>
+
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">6</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">3</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">2</div>
+                        <div class="bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">3</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">5</div>
+
+                        <div class="bg-red-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">12</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">7</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">5</div>
+                        <div class="bg-yellow-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">6</div>
+                        <div class="bg-red-400 rounded flex items-center justify-center text-white font-bold text-xs shadow-sm transition-transform hover:scale-110">11</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="results" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Real Results for Local Businesses</h2>
+                <p class="text-lg text-slate-600">Don't just take our word for it. Here is what our partners say about our lead generation systems.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="text-amber-400 text-xl mb-4">★★★★★</div>
+                    <p class="text-slate-700 mb-6 italic flex-grow">"Since working with Grid Point SEO, our phone calls have tripled. We had to hire a new van just to keep up with the demand."</p>
+                    <div>
+                        <div class="font-bold text-slate-900">Mike Johnson</div>
+                        <div class="text-xs text-slate-500">Owner, Apex Plumbing</div>
+                        <div class="mt-4 pt-4 border-t border-stone-200 text-sm font-bold text-green-600">
+                            ↑ 240% Revenue Increase
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="text-amber-400 text-xl mb-4">★★★★★</div>
+                    <p class="text-slate-700 mb-6 italic flex-grow">"I was skeptical about SEO agencies, but these guys actually delivered. Seeing our heatmap turn green was amazing."</p>
+                    <div>
+                        <div class="font-bold text-slate-900">Sarah Richards</div>
+                        <div class="text-xs text-slate-500">Manager, City Electric</div>
+                        <div class="mt-4 pt-4 border-t border-stone-200 text-sm font-bold text-green-600">
+                            #1 Ranking for 15 Keywords
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="text-amber-400 text-xl mb-4">★★★★★</div>
+                    <p class="text-slate-700 mb-6 italic flex-grow">"We are getting leads from people who said they found us on Google Maps and our webiste for the first time."</p>
+                    <div>
+                        <div class="font-bold text-slate-900">David Thompson</div>
+                        <div class="text-xs text-slate-500">Director, Elite Roofing</div>
+                        <div class="mt-4 pt-4 border-t border-stone-200 text-sm font-bold text-green-600">
+                            30+ New Leads / Month
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-stone-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <div class="border border-stone-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center transition-colors hover:bg-stone-50">
+                        <span class="font-semibold text-slate-900">How long does it take to see results?</span>
+                        <svg class="w-5 h-5 text-slate-400 rotate-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                            SEO is a long-term strategy. Typically, we see significant movement in rankings within 3-6 months, but leads often start coming in sooner due to our Google Business Profile optimizations and website content.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center transition-colors hover:bg-stone-50">
+                        <span class="font-semibold text-slate-900">Do you work with businesses outside of home services?</span>
+                        <svg class="w-5 h-5 text-slate-400 rotate-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                            We specialize in home service businesses. This focus allows us to use proven strategies that we know work for your specific industry. However we can rank any local businesses.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center transition-colors hover:bg-stone-50">
+                        <span class="font-semibold text-slate-900">Is there a long-term contract?</span>
+                        <svg class="w-5 h-5 text-slate-400 rotate-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                            "We believe in proving our value before asking for a long-term commitment. We operate on a month-to-month basis for the first few months so you can experience the results firsthand. Once you are completely confident in our progress, we'll sign a longer-term agreement. You are free to cancel the initial agreement with 30 days' notice." 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center transition-colors hover:bg-stone-50">
+                        <span class="font-semibold text-slate-900">How do I track my ROI?</span>
+                        <svg class="w-5 h-5 text-slate-400 rotate-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                            We provide a live dashboard (like the one shown above) and monthly video reports. We track keyword rankings, phone calls, form submissions, and ultimately, the revenue generated from our campaigns.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-800 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-700 rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-brand-600 rounded-full mix-blend-overlay filter blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Dominate Your Local Market?</h2>
+            <p class="text-brand-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">Stop losing customers to competitors with inferior services but better SEO. Let's get your phone ringing.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-brand-900 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-brand-50 transition-all transform hover:scale-105">
+                    Book Your Free Strategy Session
+                </button>
+            </div>
+            <p class="mt-6 text-sm text-brand-300/70">No obligation. 100% free website audit included.</p>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.rotate-icon');
+                
+                // Toggle current
+                const isActive = content.classList.contains('active');
+                
+                // Close all others first (Accordion behavior)
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.rotate-icon').forEach(i => i.classList.remove('active'));
+
+                // If it wasn't active before, open it now
+                if (!isActive) {
+                    content.classList.add('active');
+                    icon.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
